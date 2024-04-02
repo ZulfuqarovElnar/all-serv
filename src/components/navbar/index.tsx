@@ -33,7 +33,7 @@ export default function Navbar() {
                 <div className='flex items-center'>
                     <div className={`lg:flex lg:flex-row lg:relative lg:w-auto lg:top-0 lg:h-auto lg:bg-transparent lg:shadow-none lg:overflow-visible w-full bg-white flex flex-col shadow-box fixed left-0 z-40 top-[100px] transition-all duration-300 overflow-hidden  ${menuVisible ? 'h-auto' : ' h-0'}`}>
                         <ul className='lg:flex-row lg:flex lg:gap-6 lg:px-0 lg:pt-6 flex flex-col py-6 pt-6 px-10 gap-3 text-[#333] lg:text-white font-bold'>
-                            <li className='lg:hover:border-b font-bold text-lg lg:hover:border-white border-0 transition-all'>
+                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'>
                                 <div className='flex items-center' >
                                     <Popover>
                                         <Popover.Button className="focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
@@ -41,7 +41,7 @@ export default function Navbar() {
                                             {isOpen ? <FontAwesomeIcon className='px-[5px]' icon={faAngleUp} /> : <FontAwesomeIcon className='px-[5px]' icon={faAngleDown} />}
                                         </Popover.Button>
                                         <Popover.Panel className="relative ">
-                                            <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 bg-[#42A1FA] text-white py-[10px] px-2.5'>
+                                            <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Gozəllik salonlari</a></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Kirayə evlər</a></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Təmizlik şirkətləri</a></li>
@@ -52,12 +52,12 @@ export default function Navbar() {
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'>
                                                     <div>
                                                         <Popover>
-                                                            <Popover.Button onClick={() => setIsSecondOpen(!isSecondOpen)} className="w-full flex justify-between items-center focus:outline-none ">
+                                                            <Popover.Button onClick={() => setIsSecondOpen(!isSecondOpen)} className="w-full pl-12 flex justify-between items-center focus:outline-none ">
                                                                 Təmizlik
                                                                 {isSecondOpen ? <FontAwesomeIcon className='pt-1' icon={faAngleLeft} /> : <FontAwesomeIcon className='pt-1' icon={faAngleRight} />}
                                                             </Popover.Button>
                                                             <Popover.Panel>
-                                                                <ul className='absolute left-[200px] rounded-[20px] lg:top-[176px] top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
+                                                                <ul className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
                                                                     <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Xalça təmizliyi</a></li>
                                                                     <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Əşya təmizliyi</a></li>
                                                                     <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Xadimə</a></li>
@@ -96,7 +96,19 @@ export default function Navbar() {
                     </div>
                     <div className={`flex justify-center items-center px-5 gap-5 ${showProfile ? 'block' : 'hidden'}`}>
                         <FontAwesomeIcon className='text-white text-[25px] cursor-pointer' icon={faBell} />
-                        <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="src/assets/images/profile.svg" alt="" />
+                        <Popover>
+                            <Popover.Button className="focus:outline-none">
+                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="src/assets/images/profile.svg" alt="" />
+                        </Popover.Button>
+                        <Popover.Panel className='absolute z-20'>
+                            <img className='pl-3' src="src/assets/images/icon.svg" alt="" />
+                            <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
+                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ayarlar</a></li>
+                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Rezervlər</a></li>
+                            </ul>
+                        </Popover.Panel>
+                        </Popover>
+                        
                     </div>
                     <div className='flex lg:hidden transition-all duration-300 ease'> 
                         <FontAwesomeIcon
