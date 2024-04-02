@@ -101,7 +101,7 @@ export default function Navbar() {
                             <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="assets/images/profile.svg" alt="" />
                         </Popover.Button>
                         <Popover.Panel className='absolute z-20'>
-                            <img className='pl-3' src="src/assets/images/icon.svg" alt="" />
+                            <img className='pl-3' src="assets/images/icon.svg" alt="" />
                             <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ayarlar</a></li>
                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Rezervlər</a></li>
