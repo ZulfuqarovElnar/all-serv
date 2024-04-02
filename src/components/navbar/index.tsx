@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className='flex justify-between items-center py-[16px] px-[40px]'>
                 <div className='flex'>
                     <div className="w-[77px] h-[80px] -mt-2 flex justify-center bg-[url('src/assets/images/Dots.png')] ">
-                        <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="src/assets/images/logo.svg" alt="" />
+                        <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="assets/images/logo.svg" alt="" />
                     </div>
                     <div className={`flex flex-col justify-center pl-5 ${showProfile ? 'block' : 'hidden'}`}>
                         <h1 className='text-[14px] text-[#333]'>Salam <span className='text-[14px] text-white '> Serdar</span></h1>
@@ -98,7 +98,7 @@ export default function Navbar() {
                         <FontAwesomeIcon className='text-white text-[25px] cursor-pointer' icon={faBell} />
                         <Popover>
                             <Popover.Button className="focus:outline-none">
-                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="src/assets/images/profile.svg" alt="" />
+                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="assets/images/profile.svg" alt="" />
                         </Popover.Button>
                         <Popover.Panel className='absolute z-20'>
                             <img className='pl-3' src="src/assets/images/icon.svg" alt="" />

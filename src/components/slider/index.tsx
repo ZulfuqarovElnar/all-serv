@@ -4,9 +4,9 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 export default function Slider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
-        "src/assets/images/slide1.jpg",
-        "src/assets/images/slide2.jpg",
-        "src/assets/images/slide3.jpg"
+        "assets/images/slide1.jpg",
+        "assets/images/slide2.jpg",
+        "assets/images/slide3.jpg"
     ];
 
     const nextSlide = () => {
