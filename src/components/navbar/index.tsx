@@ -2,12 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faBars, faBell, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Popover } from '@headlessui/react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSecondOpen, setIsSecondOpen] = useState(false);
     const [menuVisible, setMenuVisible] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
+    const [popoverIcon, setPopoverIcon] = useState(faAngleDown);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
@@ -16,13 +18,16 @@ export default function Navbar() {
     const toggleProfile = () => {
         setShowProfile(!showProfile);
     };
+    const togglePopoverIcon = () => {
+        setPopoverIcon(isOpen || isSecondOpen ? faAngleDown : faAngleUp);
+    };
 
     return (
         <nav className='w-full h-[100px] shadow-lg fixed bg-[#42A1FA] z-50'>
             <div className='flex justify-between items-center py-[16px] px-[40px]'>
                 <div className='flex'>
-                    <div className="w-[77px] h-[80px] -mt-2 flex justify-center bg-[url('src/assets/images/Dots.png')] ">
-                        <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="assets/images/logo.svg" alt="" />
+                    <div className="w-[77px] h-[80px] -mt-2 flex justify-center bg-[url('/assets/images/Dots.png')] ">
+                        <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="/assets/images/logo.svg" alt="" />
                     </div>
                     <div className={`flex flex-col justify-center pl-5 ${showProfile ? 'block' : 'hidden'}`}>
                         <h1 className='text-[14px] text-[#333]'>Salam <span className='text-[14px] text-white '> Serdar</span></h1>
@@ -36,19 +41,19 @@ export default function Navbar() {
                             <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'>
                                 <div className='flex items-center' >
                                     <Popover>
-                                        <Popover.Button className="focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+                                        <Popover.Button className="focus:outline-none" onClick={() => { setIsOpen(!isOpen); togglePopoverIcon(); }}>
                                             xidmətlərimiz
-                                            {isOpen ? <FontAwesomeIcon className='px-[5px]' icon={faAngleUp} /> : <FontAwesomeIcon className='px-[5px]' icon={faAngleDown} />}
+                                            <FontAwesomeIcon className='px-[5px]' icon={popoverIcon} />
                                         </Popover.Button>
                                         <Popover.Panel className="relative ">
                                             <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Gozəllik salonlari</a></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Kirayə evlər</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Təmizlik şirkətləri</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">İdman zallar</a></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/cleaning">Təmizlik şirkətləri</a></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/gym">İdman zallar</Link></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Maşın təmizri</a></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ev təmir işləri</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Dayə şirkətləri</a></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/nanny">Dayə şirkətləri</Link></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'>
                                                     <div>
                                                         <Popover>
@@ -98,10 +103,10 @@ export default function Navbar() {
                         <FontAwesomeIcon className='text-white text-[25px] cursor-pointer' icon={faBell} />
                         <Popover>
                             <Popover.Button className="focus:outline-none">
-                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="assets/images/profile.svg" alt="" />
+                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="/assets/images/profile.svg" alt="" />
                         </Popover.Button>
                         <Popover.Panel className='absolute z-20'>
-                            <img className='pl-3' src="assets/images/icon.svg" alt="" />
+                            <img className='pl-3' src="/assets/images/icon.svg" alt="" />
                             <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ayarlar</a></li>
                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Rezervlər</a></li>

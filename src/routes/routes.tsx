@@ -1,28 +1,52 @@
-import { BrowserRouter as Router, RouteObject, Routes, Route } from "react-router-dom";
-import MainLayout from "../layouts/main";
+import { RouteObject } from 'react-router-dom';
+import MainLayout from '../layouts/main';
+import Nanny from '../components/nanny';
+import Cleaning from '../components/cleaning';
+import Gym from '../components/gym';
+import GymPage from '../pages/gymPage';
+import FitnessDetails from '../components/gym/fitness/details';
+import FitnessGallery from '../components/gym/fitness/gallery';
+import FitnessEmployees from '../components/gym/fitness/employees';
 
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: '/',
     element: <MainLayout />,
-    children: [],
   },
+  { 
+    path: 'nanny', 
+    element: <Nanny /> 
+  },
+  { 
+    path: '/cleaning', 
+    element: <Cleaning /> 
+  },
+  { 
+    path: '/gym',
+    element: <Gym />,
+  },  
+  { 
+    path: 'gym/:id',  
+    element: <GymPage />,
+    children: [
+      {
+        path: '', 
+        element: <FitnessDetails />, 
+      },  
+      {
+        path: 'details',  
+        element: <FitnessDetails />, 
+      },
+      {
+        path: 'gallery',  
+        element: <FitnessGallery />, 
+      },
+      {
+        path: 'employees',   
+        element: <FitnessEmployees />, 
+      }
+    ]
+  }  
 ];
 
-const RoutesComponent = () => {
-  return (
-    <Router>
-      <Routes>
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={route.element}
-          />
-        ))}
-      </Routes>
-    </Router>
-  );
-};
-
-export default RoutesComponent;
+export { routes };
