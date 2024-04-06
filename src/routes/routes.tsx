@@ -18,11 +18,11 @@ const routes: RouteObject[] = [
     element: <Nanny /> 
   },
   { 
-    path: 'cleaning', 
+    path: '/cleaning', 
     element: <Cleaning /> 
   },
   { 
-    path: 'gym',
+    path: '/gym',
     element: <Gym />,
   },  
   { 
@@ -30,8 +30,8 @@ const routes: RouteObject[] = [
     element: <GymPage />,
     children: [
       {
-        path: '',  // Varsayılan rotayı boş olarak ayarlıyoruz
-        element: <FitnessDetails />, // Varsayılan olarak FitnessDetails componentini göstereceğiz
+        path: '', 
+        element: <FitnessDetails />, 
       },  
       {
         path: 'details',  
