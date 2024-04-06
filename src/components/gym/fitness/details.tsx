@@ -8,7 +8,7 @@ export default function FitnessDetails() {
 
   const fullText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut tincidunt sem. Quisque nec augue eget lorem lobortis rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin varius velit nec justo bibendum, vitae interdum nisi cursus. Sed non odio volutpat, finibus velit sit amet, posuere magna. Phasellus a condimentum nibh. Aliquam ultrices velit ac convallis lacinia. Integer sed sapien mi. Cras pulvinar urna non posuere tempus. Nullam nec augue ut nisi scelerisque venenatis vel sit amet metus.";
 
-  const shortText = fullText.slice(0, 200); // İlk 200 karakteri al
+  const shortText = fullText.slice(0, 200);
 
   const toggleExpanded = () => {
       setExpanded(!expanded);

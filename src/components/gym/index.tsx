@@ -65,7 +65,7 @@ return (
         <div className="flex gap-5 flex-wrap justify-between p-10 h-auto">
             {data.map((item, index) => (
                 <Link key={item.id} to={item.id}>
-                    <div key={index} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-md p-3 max-w-xs md:max-w-xl mx-auto border border-white bg-white transition-shadow duration-300 hover:shadow-box hover: cursor-pointer">
+                    <div key={index} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-md p-3 max-w-xs md:max-w-xl mx-auto border border-white bg-white transition-shadow duration-300 hover:shadow-box hover:cursor-pointer">
                                 <div className="w-full md:w-1/3 bg-white grid place-items-center">
                                     <img src={item.imageUrl} alt="tailwind logo" className="rounded-xl shadow-lg object-cover h-[150px]" />
                                 </div>

@@ -9,6 +9,7 @@ export default function Navbar() {
     const [isSecondOpen, setIsSecondOpen] = useState(false);
     const [menuVisible, setMenuVisible] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
+    const [popoverIcon, setPopoverIcon] = useState(faAngleDown);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
@@ -16,6 +17,9 @@ export default function Navbar() {
 
     const toggleProfile = () => {
         setShowProfile(!showProfile);
+    };
+    const togglePopoverIcon = () => {
+        setPopoverIcon(isOpen || isSecondOpen ? faAngleDown : faAngleUp);
     };
 
     return (
@@ -37,9 +41,9 @@ export default function Navbar() {
                             <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'>
                                 <div className='flex items-center' >
                                     <Popover>
-                                        <Popover.Button className="focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+                                        <Popover.Button className="focus:outline-none" onClick={() => { setIsOpen(!isOpen); togglePopoverIcon(); }}>
                                             xidmətlərimiz
-                                            {isOpen ? <FontAwesomeIcon className='px-[5px]' icon={faAngleUp} /> : <FontAwesomeIcon className='px-[5px]' icon={faAngleDown} />}
+                                            <FontAwesomeIcon className='px-[5px]' icon={popoverIcon} />
                                         </Popover.Button>
                                         <Popover.Panel className="relative ">
                                             <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>

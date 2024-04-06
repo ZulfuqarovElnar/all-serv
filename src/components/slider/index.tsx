@@ -26,7 +26,7 @@ export default function Slider() {
     }, [currentSlide, slides.length]);
 
     return (
-        <div className="relative w-full h-[560px] overflow-hidden">
+        <div className="relative w-full h-[360px] overflow-hidden">
             {slides.map((slide, index) => (
                 <img
                 key={index}
@@ -37,12 +37,12 @@ export default function Slider() {
                 alt={`Slide ${index + 1}`}
                 />
             ))}
-            <div className="absolute inset-y-0 left-10 top-20 flex items-center">
+            <div className="absolute inset-y-0 left-10 flex items-center">
                 <button onClick={prevSlide} className="absolute left-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
                     <FaChevronLeft />
                 </button>
             </div>
-            <div className="absolute inset-y-0 right-10 top-20 flex items-center">
+            <div className="absolute inset-y-0 right-10 flex items-center">
                 <button onClick={nextSlide} className="absolute right-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
                     <FaChevronRight />
                 </button>
