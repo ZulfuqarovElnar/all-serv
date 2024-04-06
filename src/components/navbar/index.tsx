@@ -47,12 +47,12 @@ export default function Navbar() {
                                         </Popover.Button>
                                         <Popover.Panel className="relative ">
                                             <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Gozəllik salonlari</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Kirayə evlər</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/cleaning">Təmizlik şirkətləri</a></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Gozəllik salonlari</Link></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Kirayə evlər</Link></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/cleaning">Təmizlik şirkətləri</Link></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/gym">İdman zallar</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Maşın təmizri</a></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ev təmir işləri</a></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Maşın təmizri</Link></li>
+                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ev təmir işləri</Link></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/nanny">Dayə şirkətləri</Link></li>
                                                 <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'>
                                                     <div>
@@ -63,12 +63,12 @@ export default function Navbar() {
                                                             </Popover.Button>
                                                             <Popover.Panel>
                                                                 <ul className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Xalça təmizliyi</a></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Əşya təmizliyi</a></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Xadimə</a></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Uşaq baxıcısı</a></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Yaşlı baxıcısı</a></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ev heyvan baxıcısı</a></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Xalça təmizliyi</Link></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Əşya təmizliyi</Link></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Xadimə</Link></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Uşaq baxıcısı</Link></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Yaşlı baxıcısı</Link></li>
+                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ev heyvan baxıcısı</Link></li>
                                                                 </ul>
                                                             </Popover.Panel>
                                                         </Popover>
@@ -79,8 +79,8 @@ export default function Navbar() {
                                     </Popover>
                                 </div>
                             </li>
-                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><a href="/">haqqimizda</a></li>
-                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><a href="/">əlaqə</a></li>
+                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><Link to="/">haqqimizda</Link></li>
+                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><Link to="/">əlaqə</Link></li>
                         </ul>
                         <div className='px-10 mb-5 flex text-[#333] md:hidden items-center gap-2'>
                             <input placeholder='Search' className='max-w-[200px] w-full py-1 px-2 rounded-lg bg-slate-200' type="text" />
@@ -108,8 +108,8 @@ export default function Navbar() {
                         <Popover.Panel className='absolute z-20'>
                             <img className='pl-3' src="/assets/images/icon.svg" alt="" />
                             <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
-                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Ayarlar</a></li>
-                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><a href="/">Rezervlər</a></li>
+                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ayarlar</Link></li>
+                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Rezervlər</Link></li>
                             </ul>
                         </Popover.Panel>
                         </Popover>
