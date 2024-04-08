@@ -1,26 +1,45 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faBars, faBell, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { Popover } from '@headlessui/react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faBars, faBell, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Menu, Popover } from '@headlessui/react';
+import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSecondOpen, setIsSecondOpen] = useState(false);
     const [menuVisible, setMenuVisible] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-    const [popoverIcon, setPopoverIcon] = useState(faAngleDown);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
+        setIsOpen(false);
+        setIsSecondOpen(false);
     };
 
     const toggleProfile = () => {
         setShowProfile(!showProfile);
     };
-    const togglePopoverIcon = () => {
-        setPopoverIcon(isOpen || isSecondOpen ? faAngleDown : faAngleUp);
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            setIsOpen(false);
+        }
     };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+    const handleLinkClick = () => {
+        // Sayfa yenileme işlemi
+        window.location.reload();
+    };
+
 
     return (
         <nav className='w-full h-[100px] shadow-lg fixed bg-[#42A1FA] z-50'>
@@ -30,56 +49,111 @@ export default function Navbar() {
                         <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="/assets/images/logo.svg" alt="" />
                     </div>
                     <div className={`flex flex-col justify-center pl-5 ${showProfile ? 'block' : 'hidden'}`}>
-                        <h1 className='text-[14px] text-[#333]'>Salam <span className='text-[14px] text-white '> Serdar</span></h1>
-                        <h1 className='text-[14px] text-[#333]'>Yer: <span className='text-[14px] text-white '> Bakı</span></h1>
+                        <h1 className='text-[14px] font-semibold text-[#333]'>Salam <span className='text-[14px] font-semibold text-white '> Serdar</span></h1>
+                        <h1 className='text-[14px] font-semibold text-[#333]'>Yer: <span className='text-[14px] font-semibold text-white '> Bakı</span></h1>
                     </div>
                 </div>
                 
                 <div className='flex items-center'>
-                    <div className={`lg:flex lg:flex-row lg:relative lg:w-auto lg:top-0 lg:h-auto lg:bg-transparent lg:shadow-none lg:overflow-visible w-full bg-white flex flex-col shadow-box fixed left-0 z-40 top-[100px] transition-all duration-300 overflow-hidden  ${menuVisible ? 'h-auto' : ' h-0'}`}>
+                    <div className={`lg:flex lg:flex-row lg:relative lg:w-auto lg:top-0 lg:h-auto lg:bg-transparent lg:shadow-none lg:overflow-visible w-full bg-white flex flex-col shadow-box fixed left-0 z-40 top-[100px] transition-all duration-300 overflow-hidden  ${menuVisible ? 'h-auto' : ' h-0'}`} ref={menuRef}>
+                        <Menu>
+                            <Menu.Button className="h-7 focus:outline-none flex justify-start items-center px-[40px] pt-[30px] lg:px-0 lg:pt-0 lg:mr-5  my-auto text-[#333] lg:text-white lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-colors" onClick={() => setIsOpen(!isOpen)}>
+                                xidmətlərimiz
+                                <FontAwesomeIcon className='px-[8px] pt-1' icon={isOpen ? faAngleUp : faAngleDown} />
+                            </Menu.Button>
+                            {isOpen && (
+                                <Menu.Items className="relative" >
+                                    <div className='lg:absolute relative w-[200px] left-6 rounded-[20px] h-auto mt-5 lg:mt-[90px] lg:-left-[180px] text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
+                                        <Menu.Item>
+                                            <Link to="/">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Gozəllik salonlari</div>
+                                            </Link>
+                                            
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Kirayə evlər</div>
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/cleaning">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Təmizlik şirkətləri</div>
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/gym">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>İdman zallar</div>
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Maşın təmiri</div>
+                                            </Link>
+                                        </Menu.Item>  
+                                        <Menu.Item>
+                                            <Link to="/">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Ev təmir işləri</div>
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <Link to="/nanny">
+                                                <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Dayə şirkətləri</div>
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>
+                                                <div>
+                                                    <Menu>
+                                                        <Menu.Button onClick={() => setIsSecondOpen(!isSecondOpen)} className="w-full pl-12 flex justify-between items-center focus:outline-none ">
+                                                            Təmizlik
+                                                            {isSecondOpen ? <FontAwesomeIcon className='pt-1' icon={faAngleLeft} /> : <FontAwesomeIcon className='pt-1' icon={faAngleRight} />}
+                                                        </Menu.Button>
+                                                        {isOpen && (
+                                                            <Menu.Items>
+                                                                <div className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Xalça təmizliyi</div>
+                                                                        </Link>
+                                                                    </Menu.Item>  
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Əşya təmizliyi</div>
+                                                                        </Link>
+                                                                    </Menu.Item>
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Xadimə</div>
+                                                                        </Link>
+                                                                    </Menu.Item>  
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Uşaq baxıcısı</div>
+                                                                        </Link>
+                                                                    </Menu.Item>
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Yaşlı baxıcısı</div>
+                                                                        </Link>
+                                                                    </Menu.Item>  
+                                                                    <Menu.Item>
+                                                                        <Link to="/" onClick={handleLinkClick}>
+                                                                            <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Ev heyvan baxıcısı</div>
+                                                                        </Link>
+                                                                    </Menu.Item>
+                                                                </div>
+                                                            </Menu.Items>
+                                                        )}
+                                                    </Menu>
+                                                </div>
+                                            </div>
+                                        </Menu.Item>
+                                    </div>
+                                </Menu.Items>
+                            )}
+                        </Menu>
                         <ul className='lg:flex-row lg:flex lg:gap-6 lg:px-0 lg:pt-6 flex flex-col py-6 pt-6 px-10 gap-3 text-[#333] lg:text-white font-bold'>
-                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'>
-                                <div className='flex items-center' >
-                                    <Popover>
-                                        <Popover.Button className="focus:outline-none" onClick={() => { setIsOpen(!isOpen); togglePopoverIcon(); }}>
-                                            xidmətlərimiz
-                                            <FontAwesomeIcon className='px-[5px]' icon={popoverIcon} />
-                                        </Popover.Button>
-                                        <Popover.Panel className="relative ">
-                                            <ul className='lg:absolute relative w-[200px] -left-6 rounded-[20px] h-auto mt-1 lg:mt-9 text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Gozəllik salonlari</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Kirayə evlər</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/cleaning">Təmizlik şirkətləri</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/gym">İdman zallar</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Maşın təmizri</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ev təmir işləri</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/nanny">Dayə şirkətləri</Link></li>
-                                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'>
-                                                    <div>
-                                                        <Popover>
-                                                            <Popover.Button onClick={() => setIsSecondOpen(!isSecondOpen)} className="w-full pl-12 flex justify-between items-center focus:outline-none ">
-                                                                Təmizlik
-                                                                {isSecondOpen ? <FontAwesomeIcon className='pt-1' icon={faAngleLeft} /> : <FontAwesomeIcon className='pt-1' icon={faAngleRight} />}
-                                                            </Popover.Button>
-                                                            <Popover.Panel>
-                                                                <ul className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Xalça təmizliyi</Link></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Əşya təmizliyi</Link></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Xadimə</Link></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Uşaq baxıcısı</Link></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Yaşlı baxıcısı</Link></li>
-                                                                    <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ev heyvan baxıcısı</Link></li>
-                                                                </ul>
-                                                            </Popover.Panel>
-                                                        </Popover>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </Popover.Panel>
-                                    </Popover>
-                                </div>
-                            </li>
-                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><Link to="/">haqqimizda</Link></li>
+                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'><Link to="/">haqqimizda</Link></li>
                             <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><Link to="/">əlaqə</Link></li>
                         </ul>
                         <div className='px-10 mb-5 flex text-[#333] md:hidden items-center gap-2'>
@@ -103,17 +177,16 @@ export default function Navbar() {
                         <FontAwesomeIcon className='text-white text-[25px] cursor-pointer' icon={faBell} />
                         <Popover>
                             <Popover.Button className="focus:outline-none">
-                            <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="/assets/images/profile.svg" alt="" />
-                        </Popover.Button>
-                        <Popover.Panel className='absolute z-20'>
-                            <img className='pl-3' src="/assets/images/icon.svg" alt="" />
-                            <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
-                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ayarlar</Link></li>
-                                <li className='border-t hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Rezervlər</Link></li>
-                            </ul>
-                        </Popover.Panel>
+                                <img className='w-[50px] h-[50px] rounded-full cursor-pointer' src="/assets/images/profile.svg" alt="" />
+                            </Popover.Button>
+                            <Popover.Panel className='absolute z-20'>
+                                <img className='pl-3' src="/assets/images/icon.svg" alt="" />
+                                <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
+                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Ayarlar</Link></li>
+                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><Link to="/">Rezervlər</Link></li>
+                                </ul>
+                            </Popover.Panel>
                         </Popover>
-                        
                     </div>
                     <div className='flex lg:hidden transition-all duration-300 ease'> 
                         <FontAwesomeIcon
@@ -130,5 +203,7 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-    )
-}
+    );
+};
+
+export default Navbar;
