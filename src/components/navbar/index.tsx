@@ -5,10 +5,11 @@ import { Menu, Popover } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isSecondOpen, setIsSecondOpen] = useState(false);
-    const [menuVisible, setMenuVisible] = useState(false);
-    const [showProfile, setShowProfile] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isSecondOpen, setIsSecondOpen] = useState<boolean>(false);
+    const [menuVisible, setMenuVisible] = useState<boolean>(false);
+    const [showProfile, setShowProfile] = useState<boolean>(false);
+    const [savedTos, setSavedTos] = useState<string[]>([]);
     const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
@@ -39,6 +40,9 @@ const Navbar = () => {
         // Sayfa yenileme işlemi
         window.location.reload();
     };
+    const handleSaveTo = (to: string) => {
+        setSavedTos([...savedTos, to]);
+    };
 
 
     return (
@@ -65,7 +69,7 @@ const Navbar = () => {
                                 <Menu.Items className="relative" >
                                     <div className='lg:absolute relative w-[200px] left-6 rounded-[20px] h-auto mt-5 lg:mt-[90px] lg:-left-[180px] text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
                                         <Menu.Item>
-                                            <Link to="/">
+                                            <Link to="/" >
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Gozəllik salonlari</div>
                                             </Link>
                                             
@@ -81,7 +85,7 @@ const Navbar = () => {
                                             </Link>
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <Link to="/gym">
+                                            <Link to="/gym" onClick={() => handleSaveTo('/gym')}>
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>İdman zallar</div>
                                             </Link>
                                         </Menu.Item>
