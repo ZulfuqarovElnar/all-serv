@@ -18,9 +18,12 @@ export default function Services() {
                 <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                     <FontAwesomeIcon className="text-white text-[30px]" icon={faCartShopping} />
                 </div>
-                <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
-                    <FontAwesomeIcon className="text-white text-[30px]" icon={faScissors} />
-                </div>
+                <Link to="/beauty">
+                    <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
+                        <FontAwesomeIcon className="text-white text-[30px]" icon={faScissors} />
+                    </div>
+                </Link>
+                
                 <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                     <img className="text-white w-[40px]" src="assets/images/services/service3.svg" alt="" />
                 </div>

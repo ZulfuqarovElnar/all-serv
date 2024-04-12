@@ -18,3 +18,8 @@ body{
         url('fonts/Releway-SemiBold.ttf') format('ttf'),
         url('fonts/Releway-Thin.ttf') format('ttf'),
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
