@@ -12,23 +12,23 @@ import Reserve from '../components/beauty';
 
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: '/allserv/',
     element: <MainLayout />,
   },
   { 
-    path: 'nanny', 
+    path: '/allserv/nanny', 
     element: <Nanny /> 
   },
   { 
-    path: '/cleaning', 
+    path: '/allserv/cleaning', 
     element: <Cleaning /> 
   },
   { 
-    path: '/gym',
+    path: '/allserv/gym',
     element: <Gym />,
   },  
   { 
-    path: 'gym/:id',  
+    path: '/allserv/gym/:id',  
     element: <GymPage />,
     children: [
       {
@@ -50,11 +50,11 @@ const routes: RouteObject[] = [
     ]
   },
   {
-    path: '/beauty',   
+    path: '/allserv/beauty',   
     element: <BeautyPage />
   },
   {
-    path: '/reserve',   
+    path: '/allserv/reserve',   
     element: <Reserve />
   }
 

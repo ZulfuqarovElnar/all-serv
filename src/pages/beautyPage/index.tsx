@@ -66,8 +66,8 @@ const BeautyPage: React.FC<Props> = () => {
                         ))}
                     </div>
                     <div className='flex flex-wrap gap-3 justify-center items-center pt-10 '>
-                        <Link to="/reserve" className='flex px-8 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors'>Növbəti</Link>
-                        <Link to="/reserve" className='flex px-8 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors'>Rezerv et</Link>
+                        <Link to="/allserv/reserve" className='flex px-8 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors'>Növbəti</Link>
+                        <Link to="/allserv/reserve" className='flex px-8 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors'>Rezerv et</Link>
                     </div>
                 </div>
             </div>
