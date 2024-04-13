@@ -7,6 +7,8 @@ import GymPage from '../pages/gymPage';
 import FitnessDetails from '../components/gym/fitness/details';
 import FitnessGallery from '../components/gym/fitness/gallery';
 import FitnessEmployees from '../components/gym/fitness/employees';
+import BeautyPage from '../pages/beautyPage';
+import Reserve from '../components/beauty';
 
 const routes: RouteObject[] = [
   {
@@ -46,7 +48,16 @@ const routes: RouteObject[] = [
         element: <FitnessEmployees />, 
       }
     ]
-  }  
+  },
+  {
+    path: '/beauty',   
+    element: <BeautyPage />
+  },
+  {
+    path: '/reserve',   
+    element: <Reserve />
+  }
+
 ];
 
 export { routes };

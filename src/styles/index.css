@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: "Pacifico";
+body{
+    font-family: Relaway;
 }
+@font-face {
+    font-family: 'Relaway';
+    src: url('fonts/Releway-Black.ttf') format('ttf'),
+        url('fonts/Releway-Bold.ttf') format('ttf'),
+        url('fonts/Releway-ExtraBold.ttf') format('ttf'),
+        url('fonts/Releway-ExtraLight.ttf') format('ttf'),
+        url('fonts/Releway-Italic.ttf') format('ttf'),
+        url('fonts/Releway-Light.ttf') format('ttf'), 
+        url('fonts/Releway-Medium.ttf') format('ttf'),
+        url('fonts/Releway-Regular.ttf') format('ttf'),
+        url('fonts/Releway-SemiBold.ttf') format('ttf'),
+        url('fonts/Releway-Thin.ttf') format('ttf'),
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
