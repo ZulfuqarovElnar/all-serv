@@ -27,29 +27,27 @@ const BeautyPage: React.FC<Props> = () => {
             <div className="bg-white flex flex-col items-center rounded-lg shadow-box p-8 pb-0 max-w-[800px] w-full">
                 <h1 className='text-xl md:text-3xl font-semibold mb-6 text-center'>Gözəllik salonu: Beauty-shop</h1>
                 <div className='flex gap-5 justify-center flex-wrap max-w-[700px] w-full'>
-                <div className="flex flex-col gap-4 max-w-[300px] w-full">
-    <label htmlFor="date" className="text-gray-700 font-semibold px-1">Tarih Seçici</label>
-    <input
-        id="date"
-        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
-        type="date"
-        value={selectedDate}
-        onChange={handleDateChange}
-    />
-</div>
-<div className="flex flex-col gap-4 max-w-[300px] w-full">
-    <label htmlFor="time" className="text-gray-700 font-semibold px-1">Zaman Seçici</label>
-    <input
-        id="time"
-        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
-        type="time"
-        value={selectedTime}
-        onChange={handleTimeChange}
-    />
-</div>
-
+                    <div className="flex flex-col gap-4 max-w-[300px] w-full">
+                        <label htmlFor="date" className="text-gray-700 font-semibold px-1">Tarih Seçici</label>
+                        <input
+                            id="date"
+                            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                            type="date"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-4 max-w-[300px] w-full">
+                        <label htmlFor="time" className="text-gray-700 font-semibold px-1">Zaman Seçici</label>
+                        <input
+                            id="time"
+                            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                            type="time"
+                            value={selectedTime}
+                            onChange={handleTimeChange}
+                        />
+                    </div>
                 </div>
-                
                 <div className='py-7 mx-auto w-full max-w-[600px]'>
                     <h1 className='px-1 text-gray-700 font-semibold text-center text-xl'>Evə xidmət</h1>
                     <p className='px-1 py-3 text-gray-600 text-center'>Evə xidmıət vasitəsi ilə istənilən vaxt gunlərdən seçib rezervasiyani evə edə bilərsiniz</p>

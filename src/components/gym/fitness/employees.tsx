@@ -5,12 +5,12 @@ export default function FitnessEmployees() {
   const totalEmployees = 6; 
 
   const employees = [
-    { name: "Ramin Abbasbəyli", role: "Fitness müəllimi", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe3.svg" },
-    { name: "Banu Ramilzadə", role: "Qadınlar üçün fitness", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe1.svg" },
-    { name: "Mələk Hüseyinzadə", role: "Uşaqlar üçün üzgüçülük", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe2.svg" },
-    { name: "Emin İlkinzadə", role: "Fitness dokor", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe4.svg" },
-    { name: "Mələk Hüseyinzadə", role: "Uşaqlar üçün üzgüçülük", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe2.svg" },
-    { name: "Emin İlkinzadə", role: "Fitness dokor", rating: 4.5, image: "/allserv/assets/images/gym/employees/employe4.svg" }
+    { name: "Ramin Abbasbəyli", role: "Fitness müəllimi", rating: 4.5, image: "/assets/images/gym/employees/employe3.svg" },
+    { name: "Banu Ramilzadə", role: "Qadınlar üçün fitness", rating: 4.5, image: "/assets/images/gym/employees/employe1.svg" },
+    { name: "Mələk Hüseyinzadə", role: "Uşaqlar üçün üzgüçülük", rating: 4.5, image: "/assets/images/gym/employees/employe2.svg" },
+    { name: "Emin İlkinzadə", role: "Fitness dokor", rating: 4.5, image: "/assets/images/gym/employees/employe4.svg" },
+    { name: "Mələk Hüseyinzadə", role: "Uşaqlar üçün üzgüçülük", rating: 4.5, image: "/assets/images/gym/employees/employe2.svg" },
+    { name: "Emin İlkinzadə", role: "Fitness dokor", rating: 4.5, image: "/assets/images/gym/employees/employe4.svg" }
   ];
 
   const loadMore = () => {
