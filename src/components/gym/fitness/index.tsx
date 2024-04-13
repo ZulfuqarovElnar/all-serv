@@ -25,7 +25,7 @@ export default function Fitness() {
     return (
         <div>
             <div className="w-full h-auto">
-                <img className="w-full h-[350px] object-cover" src="/assets/images/gym/gym1.svg" alt="" />
+                <img className="w-full h-[350px] object-cover" src="/allserv/assets/images/gym/gym1.svg" alt="" />
                 <div className="absolute top-[400px] right-20 md:right-40 lg:right-60  gap-4 flex">
                     <div className="w-[40px] h-[40px] text-[20px] flex justify-center items-center rounded-full bg-white text-[#00A3FF] hover:bg-[#00A3FF] hover:text-white transition-all cursor-pointer">
                         <FontAwesomeIcon icon={faCommentDots} />

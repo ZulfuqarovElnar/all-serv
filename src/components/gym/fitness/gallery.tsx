@@ -10,7 +10,7 @@ export default function FitnessGallery() {
               {(
                 <img
                   className="h-full max-w-full rounded-lg object-cover object-center hover:scale-105 transition-all hover:brightness-110"
-                  src={`/assets/images/gym/fitness/fitness${index}.svg`}
+                  src={`/allserv/assets/images/gym/fitness/fitness${index}.svg`}
                   alt="gallery-photo"
                 />
               )}
@@ -23,7 +23,7 @@ export default function FitnessGallery() {
               {(
                 <img
                   className="h-full max-w-full rounded-lg object-cover object-center hover:scale-105 transition-all hover:brightness-110"
-                  src={`/assets/images/gym/fitness/fitness${index}.jpg`}
+                  src={`/allserv/assets/images/gym/fitness/fitness${index}.jpg`}
                   alt="gallery-photo"
                 />
               )}
@@ -36,7 +36,7 @@ export default function FitnessGallery() {
               {(
                 <img
                   className="h-full max-w-full rounded-lg object-cover object-center hover:scale-105 transition-all hover:brightness-110"
-                  src={`/assets/images/gym/fitness/fitness${index}.jpg`}
+                  src={`/allserv/assets/images/gym/fitness/fitness${index}.jpg`}
                   alt="gallery-photo"
                 />
               )}
@@ -49,7 +49,7 @@ export default function FitnessGallery() {
               {(
                 <img
                   className="h-full max-w-full rounded-lg object-cover object-center hover:scale-105 transition-all hover:brightness-110"
-                  src={`/assets/images/gym/fitness/fitness${index}.jpg`}
+                  src={`/allserv/assets/images/gym/fitness/fitness${index}.jpg`}
                   alt="gallery-photo"
                 />
               )}

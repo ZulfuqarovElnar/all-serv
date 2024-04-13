@@ -9,7 +9,7 @@ export default function Services() {
                 <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                     <img className="text-white w-[30px]" src="assets/images/services/service1.svg" alt="" />
                 </div>
-                <Link to="/cleaning">
+                <Link to="/allserv/cleaning">
                     <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                         <img className="text-white w-[30px]" src="assets/images/services/service2.svg" alt="" />
                     </div>
@@ -18,7 +18,7 @@ export default function Services() {
                 <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                     <FontAwesomeIcon className="text-white text-[30px]" icon={faCartShopping} />
                 </div>
-                <Link to="/beauty">
+                <Link to="/allserv/beauty">
                     <div className="w-[60px] h-[60px] rounded-full bg-[#42A1FA] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                         <FontAwesomeIcon className="text-white text-[30px]" icon={faScissors} />
                     </div>
