@@ -70,7 +70,7 @@ const Navbar = () => {
                                             
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <NavLink to="/">
+                                            <NavLink to="">
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Kirayə evlər</div>
                                             </NavLink>
                                         </Menu.Item>
@@ -182,7 +182,7 @@ const Navbar = () => {
                                 <img className='pl-3' src="/assets/images/icon.svg" alt="" />
                                 <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
                                     <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="/">Ayarlar</NavLink></li>
-                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="/">Rezervlər</NavLink></li>
+                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="/reserve">Rezervlər</NavLink></li>
                                 </ul>
                             </Popover.Panel>
                         </Popover>
