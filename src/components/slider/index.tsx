@@ -20,7 +20,7 @@ export default function Slider() {
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [currentSlide, slides.length]);
