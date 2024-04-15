@@ -21,5 +21,23 @@ body{
 
 .scrollbar-hidden::-webkit-scrollbar {
     display: none;
-  }
-  
+}
+
+ /*** Footer Svg ***/
+#myDiv {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#mySvg {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+#myDiv:hover {
+    background-color: #fff; 
+    color: white;
+}
+
+#myDiv:hover #mySvg {
+    color: #007bff; 
+}

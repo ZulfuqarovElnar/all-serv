@@ -1,6 +1,6 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Menu } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,18 +12,18 @@ interface Reservation {
   tableNumber: number;
   reservationTime: string;
 }
-
+  
 const fakeReservations: Reservation[] = [
   {
-    salonName: "Gözallik salonu: Bauty-shop",
+    salonName: "Gözəllik salonu: Bauty-shop",
     reservationDateTime: "Cümə axşamı Aprel 2023, 06:28 PM",
     serviceType: "Salon xidməti",
     reservationType: "Gözəllik salonu rezervasiyası",
     tableNumber: 1,
-    reservationTime: "15-04-2023 16:26",
+    reservationTime: "15-04-2023 16:26",  
   },
   {
-    salonName: "Gözallik salonu: Bauty-shop",
+    salonName: "Gözəllik salonu: Bauty-shop",
     reservationDateTime: "Cümə axşamı Aprel 2023, 06:28 PM",
     serviceType: "Salon xidməti",
     reservationType: "Gözəllik salonu rezervasiyası",
@@ -31,7 +31,7 @@ const fakeReservations: Reservation[] = [
     reservationTime: "15-04-2023 16:30",
   },
   {
-    salonName: "Gözallik salonu: Bauty-shop",
+    salonName: "Gözəllik salonu: Bauty-shop",
     reservationDateTime: "Cümə axşamı Aprel 2023, 06:28 PM",
     serviceType: "Salon xidməti",
     reservationType: "Gözəllik salonu rezervasiyası",
@@ -62,8 +62,8 @@ interface ReservationCardProps {
   reservation: Reservation;
   isFirst: boolean;
 }
-function ReservationCard({ reservation, isFirst }: ReservationCardProps): JSX.Element {
-  const [isOpen, setIsOpen] = useState(isFirst);
+function ReservationCard({ reservation }: ReservationCardProps): JSX.Element {
+  const [isOpen, setIsOpen] = useState(true);
   const [isIconRotated, setIsIconRotated] = useState(false);
   const menuRef = useRef<HTMLButtonElement>(null);
 
@@ -72,16 +72,11 @@ function ReservationCard({ reservation, isFirst }: ReservationCardProps): JSX.El
     setIsIconRotated(prev => !prev);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-    setIsIconRotated(false);
-  };
-
   return (
     <div className="max-w-[400px] w-full px-6">
       <h1 className="text-xl font-semibold text-gray-700 px-5 py-3">{reservation.salonName}</h1>
-      <Menu>
-        <Menu.Button
+      <Popover>
+        <Popover.Button
           ref={menuRef}
           className="w-full mt-3 flex justify-between items-center shadow-md px-5 py-3 rounded hover:shadow-box transition-all"
           onClick={toggleMenu}
@@ -89,16 +84,16 @@ function ReservationCard({ reservation, isFirst }: ReservationCardProps): JSX.El
           {reservation.reservationDateTime}
           <FontAwesomeIcon
             icon={faAngleDown}
-            className={`transition-all transform ${isIconRotated ? "rotate-180" : ""}`}
+            className={`transition-all transform ${isIconRotated ? "" : "rotate-180"}`}
           />
-        </Menu.Button>
+        </Popover.Button>
         {isOpen && (
-          <Menu.Items
+          <Popover.Panel
             static
             className="h-auto transition-all"
-            onClick={closeMenu}
+            
           >
-            <Menu.Item>
+            <div>
               <div className=" shadow-md mt-3 px-5 py-3 rounded hover:shadow-box transition-all">
                 <h1 className="text-[25px] font-semibold text-[#333] text-center">Növ: {reservation.serviceType}</h1>
                 <p className="text-[20px] font-semibold text-[#333] text-center">{reservation.reservationType}</p>
@@ -129,10 +124,10 @@ function ReservationCard({ reservation, isFirst }: ReservationCardProps): JSX.El
                   </div>
                 </div>
               </div>
-            </Menu.Item>
-          </Menu.Items>
+            </div>
+          </Popover.Panel>
         )}
-      </Menu>
+      </Popover>
     </div>
   );
 }

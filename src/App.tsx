@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import { routes } from './routes/routes';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             ))}
           </Routes>
         </div>
+        <Footer />
       </Router>
     </Provider>
   );
