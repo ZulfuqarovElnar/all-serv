@@ -96,7 +96,7 @@ function ReservationCard({ reservation, isFirst }: ReservationCardProps): JSX.El
           <Menu.Items
             static
             className="h-auto transition-all"
-            onClick={closeMenu} // Add this to close menu when menu items are clicked
+            onClick={closeMenu}
           >
             <Menu.Item>
               <div className=" shadow-md mt-3 px-5 py-3 rounded hover:shadow-box transition-all">

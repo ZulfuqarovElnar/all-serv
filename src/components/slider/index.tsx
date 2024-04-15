@@ -20,7 +20,7 @@ export default function Slider() {
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [currentSlide, slides.length]);
@@ -38,12 +38,12 @@ export default function Slider() {
                 />
             ))}
             <div className="absolute inset-y-0 left-10 flex items-center">
-                <button onClick={prevSlide} className="absolute left-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
+                <button title="Next" onClick={prevSlide} className="absolute left-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
                     <FaChevronLeft />
                 </button>
             </div>
             <div className="absolute inset-y-0 right-10 flex items-center">
-                <button onClick={nextSlide} className="absolute right-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
+                <button title="Next" onClick={nextSlide} className="absolute right-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full">
                     <FaChevronRight />
                 </button>
             </div>
