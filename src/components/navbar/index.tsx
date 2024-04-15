@@ -9,7 +9,7 @@ const Navbar = () => {
     const [isSecondOpen, setIsSecondOpen] = useState<boolean>(false);
     const [menuVisible, setMenuVisible] = useState<boolean>(false);
     const [showProfile, setShowProfile] = useState<boolean>(false);
-    const [savedTos, setSavedTos] = useState<string[]>([]);
+    
     const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
@@ -38,11 +38,7 @@ const Navbar = () => {
 
     const handleLinkClick = () => {
         window.location.reload();
-    };
-    const handleSaveTo = (to: string) => {
-        setSavedTos([...savedTos, to]);
-    };
-
+    }
 
     return (
         <nav className='w-full h-[100px] shadow-lg fixed bg-[#42A1FA] z-50'>
@@ -84,7 +80,7 @@ const Navbar = () => {
                                             </NavLink>
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <NavLink to="/gym" onClick={() => handleSaveTo('/gym')}>
+                                            <NavLink to="/gym" >
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>İdman zallar</div>
                                             </NavLink>
                                         </Menu.Item>
