@@ -62,7 +62,7 @@ return (
                 <button className="px-[7px] py-[6px] border-black border rounded-3xl hover:bg-[#333] hover:text-white transition-all">Gimnastika</button>
             </div>
         </div>
-        <div className="flex gap-5 flex-wrap justify-between p-10 h-auto">
+        <div className="flex gap-10 flex-wrap justify-center  items-center p-10 h-auto">
             {data.map((item, index) => (
                 <Link key={item.id} to={item.id}>
                     <div key={index} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-md p-3 max-w-xs md:max-w-xl mx-auto border border-white bg-white transition-shadow duration-300 hover:shadow-box hover:cursor-pointer">

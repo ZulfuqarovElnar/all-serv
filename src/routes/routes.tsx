@@ -9,6 +9,7 @@ import FitnessGallery from '../components/gym/fitness/gallery';
 import FitnessEmployees from '../components/gym/fitness/employees';
 import BeautyPage from '../pages/beautyPage';
 import Reserve from '../components/beauty';
+import AboutPage from '../pages/about-us';
 
 const routes: RouteObject[] = [
   {
@@ -56,8 +57,11 @@ const routes: RouteObject[] = [
   {
     path: '/reserve',   
     element: <Reserve />
+  },
+  {
+    path: '/about',   
+    element: <AboutPage />
   }
-
 ];
 
 export { routes };

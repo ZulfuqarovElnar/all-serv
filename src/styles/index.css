@@ -39,5 +39,8 @@ body{
 }
 
 #myDiv:hover #mySvg {
-    color: #007bff; 
+    color: #0073ce; 
+}
+#myDiv:hover + h1 {
+    opacity: 1;
 }

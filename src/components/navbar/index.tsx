@@ -41,28 +41,27 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='w-full h-[100px] shadow-lg fixed bg-[#42A1FA] z-50'>
+        <nav className='w-full h-[100px] shadow-lg fixed bg-[#0073ce] z-50'>
             <div className='flex justify-between items-center py-[16px] px-[40px]'>
                 <div className='flex'>
-                    <div className="w-[77px] h-[80px] -mt-2 flex justify-center bg-[url('/assets/images/Dots.png')] ">
-                        <img className=" w-[85px] h-[72px] rounded-full cursor-pointer" src="/assets/images/logo.svg" alt="" />
-                    </div>
-                    <div className={`flex flex-col justify-center pl-5 ${showProfile ? 'block' : 'hidden'}`}>
-                        <h1 className='text-[14px] font-semibold text-[#333]'>Salam <span className='text-[14px] font-semibold text-white '> Serdar</span></h1>
-                        <h1 className='text-[14px] font-semibold text-[#333]'>Yer: <span className='text-[14px] font-semibold text-white '> Bakı</span></h1>
+                    <div className="w-[137px] h-[70px] -mt-2 flex items-center justify-center bg-[url('/assets/images/Dots.png')] ">
+                        <img className="w-[85px] h-[72px] rounded-full cursor-pointer" src="/assets/images/logo.svg" alt="" />
+                        <h1 className='pt-2 text-2xl font-bold text-white whitespace-nowrap'>All Serv</h1>
                     </div>
                 </div>
-                
                 <div className='flex items-center'>
-                    <div className={`lg:flex lg:flex-row lg:relative lg:w-auto lg:top-0 lg:h-auto lg:bg-transparent lg:shadow-none lg:overflow-visible w-full bg-white flex flex-col shadow-box fixed left-0 z-40 top-[100px] transition-all duration-300 overflow-hidden  ${menuVisible ? 'h-auto' : ' h-0'}`} ref={menuRef}>
+                    <div className={`lg:flex lg:flex-row lg:relative lg:w-auto lg:top-0 lg:h-auto lg:bg-transparent lg:shadow-none lg:overflow-visible w-full bg-white flex flex-col shadow-box fixed left-0 z-40 top-[100px] transition-all duration-300 overflow-hidden   ${menuVisible ? 'h-auto' : ' h-0'}`} ref={menuRef}>
+                    <ul className='lg:flex-row lg:flex lg:gap-6 lg:px-5 lg:pt-6 flex flex-col py-6 pt-6 px-10 text-[#333] lg:text-white font-bold'>
+                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'><NavLink to="/">Əsas</NavLink></li>
+                        </ul>
                         <Menu>
                             <Menu.Button className="h-7 focus:outline-none flex justify-start items-center px-[40px] pt-[30px] lg:px-0 lg:pt-0 lg:mr-5  my-auto text-[#333] lg:text-white lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-colors" onClick={() => setIsOpen(!isOpen)}>
-                                xidmətlərimiz
+                                Xidmətlərimiz
                                 <FontAwesomeIcon className='px-[8px] pt-1' icon={isOpen ? faAngleUp : faAngleDown} />
                             </Menu.Button>
                             {isOpen && (
                                 <Menu.Items className="relative" >
-                                    <div className='lg:absolute relative w-[200px] left-6 rounded-[20px] h-auto mt-5 lg:mt-[90px] lg:-left-[180px] text-center bg-[#42A1FA] text-white py-[10px] px-2.5'>
+                                    <div className='lg:absolute relative w-[200px] left-6 rounded-[20px] h-auto mt-5 lg:mt-[90px] lg:-left-[180px] text-center bg-[#0073ce] text-white py-[10px] px-2.5 shadow-box'>
                                         <Menu.Item>
                                             <NavLink to="/beauty" >
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Gozəllik salonlari</div>
@@ -70,7 +69,7 @@ const Navbar = () => {
                                             
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <NavLink to="">
+                                            <NavLink to="#">
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Kirayə evlər</div>
                                             </NavLink>
                                         </Menu.Item>
@@ -85,12 +84,12 @@ const Navbar = () => {
                                             </NavLink>
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <NavLink to="/">
+                                            <NavLink to="#">
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Maşın təmiri</div>
                                             </NavLink>
                                         </Menu.Item>  
                                         <Menu.Item>
-                                            <NavLink to="/">
+                                            <NavLink to="#">
                                                 <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Ev təmir işləri</div>
                                             </NavLink>
                                         </Menu.Item>
@@ -109,34 +108,34 @@ const Navbar = () => {
                                                         </Menu.Button>
                                                         {isOpen && (
                                                             <Menu.Items>
-                                                                <div className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#42A1FA] text-white py-[6px] px-2.5'>
+                                                                <div className='absolute left-[200px] rounded-[20px] lg:top-[176px] text-center top-[130px] w-[200px] mt-9 bg-[#0073ce] text-white py-[6px] px-2.5 shadow-box'>
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Xalça təmizliyi</div>
                                                                         </NavLink>
                                                                     </Menu.Item>  
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Əşya təmizliyi</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Xadimə</div>
                                                                         </NavLink>
                                                                     </Menu.Item>  
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Uşaq baxıcısı</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Yaşlı baxıcısı</div>
                                                                         </NavLink>
                                                                     </Menu.Item>  
                                                                     <Menu.Item>
-                                                                        <NavLink to="/" onClick={handleLinkClick}>
+                                                                        <NavLink to="#" onClick={handleLinkClick}>
                                                                             <div className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'>Ev heyvan baxıcısı</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
@@ -152,8 +151,8 @@ const Navbar = () => {
                             )}
                         </Menu>
                         <ul className='lg:flex-row lg:flex lg:gap-6 lg:px-0 lg:pt-6 flex flex-col py-6 pt-6 px-10 gap-3 text-[#333] lg:text-white font-bold'>
-                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'><NavLink to="/">haqqimizda</NavLink></li>
-                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><NavLink to="/">əlaqə</NavLink></li>
+                            <li className='lg:hover:border-b border-b border-transparent font-bold text-lg lg:hover:border-white border-0 transition-all'><NavLink to="/about">Haqqimizda</NavLink></li>
+                            <li className='lg:hover:border-b text-lg font-bold lg:hover:border-white border-0 transition-all'><NavLink to="#">Əlaqə</NavLink></li>
                         </ul>
                         <div className='px-10 mb-5 flex text-[#333] md:hidden items-center gap-2'>
                             <input placeholder='Search' className='max-w-[200px] w-full py-1 px-2 rounded-lg bg-slate-200' type="text" />
@@ -165,7 +164,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className='px-5 hidden text-white md:flex items-center gap-2'>
-                        <input placeholder='Search' className=' placeholder:text-slate-100 max-w-[200px] w-full py-1 px-2 rounded-lg border border-white bg-[#42A1FA] focus:outline-none' type="text" />
+                        <input placeholder='Search' className=' placeholder:text-slate-100 max-w-[200px] w-full py-1 px-2 rounded-lg border border-white bg-[#0073ce] focus:outline-none' type="text" />
                         <FontAwesomeIcon className='text-white' icon={faMagnifyingGlass} />
                     </div>
                     <div className={`hidden md:flex md:pr-5 pl-5 gap-5 ${showProfile ? 'md:hidden' : 'block'}`}>
@@ -181,7 +180,7 @@ const Navbar = () => {
                             <Popover.Panel className='absolute z-20'>
                                 <img className='pl-3' src="/assets/images/icon.svg" alt="" />
                                 <ul className='absolute -left-12 rounded-[20px] w-[150px]  bg-[#777EF6] text-center text-white py-[6px] px-2.5'>
-                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="/">Ayarlar</NavLink></li>
+                                    <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="#">Ayarlar</NavLink></li>
                                     <li className='border-t font-semibold hover:bg-white hover:text-[#333] transition-all my-1 px-1'><NavLink to="/reserve">Rezervlər</NavLink></li>
                                 </ul>
                             </Popover.Panel>

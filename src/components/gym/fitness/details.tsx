@@ -37,7 +37,7 @@ export default function FitnessDetails() {
                 {expanded ? fullText : shortText}
                 {!expanded && (
                     <span
-                        className="text-[#F8B84E] cursor-pointer"
+                        className="text-[#F8B84E] font-semibold cursor-pointer"
                         onClick={toggleExpanded}
                     >
                         <span className="text-[#555454]"> ... </span>

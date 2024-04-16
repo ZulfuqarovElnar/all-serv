@@ -7,7 +7,7 @@ export default function Nanny() {
 
 return (
     <div className="text-center text-2xl pt-[30px]">
-        <h1 className="text-2xl">Dayə</h1>
+        <h1 className="text-2xl font-semibold text-[#0073ce]">Dayə xidməti</h1>
         <div className="p-10 grid grid-cols-1 gap-10 md:grid-cols-3">
             {services.map((service, index) => (
                 <div key={index} className="flex flex-col rounded-xl bg-white shadow-box">
