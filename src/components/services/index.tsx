@@ -54,7 +54,7 @@ export default function Services() {
                         <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">İdman zalları</h1>
                     </div>
                 </Link>
-                <Link to="/gym">
+                <Link to="#">
                     <div className="relative w-[60px] h-[60px] flex flex-col items-center whitespace-nowrap">
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faHouseCrack} />
