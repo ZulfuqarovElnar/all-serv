@@ -10,6 +10,8 @@ import FitnessEmployees from '../components/gym/fitness/employees';
 import BeautyPage from '../pages/beautyPage';
 import Reserve from '../components/beauty';
 import AboutPage from '../pages/about-us';
+import Contact from '../pages/contact-us';
+import ProfilePage from '../pages/profilePage';
 
 const routes: RouteObject[] = [
   {
@@ -59,8 +61,16 @@ const routes: RouteObject[] = [
     element: <Reserve />
   },
   {
-    path: '/about',   
+    path: '/about-us',   
     element: <AboutPage />
+  },
+  {
+    path: '/contact-us',   
+    element: <Contact />
+  },
+  {
+    path: '/profile',   
+    element: <ProfilePage />
   }
 ];
 
