@@ -17,7 +17,7 @@ const ProfilePage = () => {
     confirmPassword: false
   }); 
 
-  const [passwordMatch, setPasswordMatch] = useState(true); // Parola eşleşme durumu
+  const [passwordMatch, setPasswordMatch] = useState(true);
 
   interface UserInfo {
     fullname: string;
@@ -155,7 +155,7 @@ const ProfilePage = () => {
                     </label>
                   </div>
                 </div>
-                <div className='flex gap-10'>
+                <div className='flex gap-10 flex-wrap'>
                   <div className="relative h-11 w-full max-w-[300px] min-w-[300px]">
                     <input
                       type={showPassword.password ? 'text' : 'password'}

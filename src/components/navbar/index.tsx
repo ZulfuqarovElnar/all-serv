@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faArrowRightFromBracket, faBars, faBell, faCircleQuestion, faGear, faMagnifyingGlass, faRegistered, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Menu, Popover } from '@headlessui/react';
@@ -65,7 +65,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='w-full h-[100px] shadow-lg fixed bg-[#0073ce] z-50'>
+        <nav className='w-full h-[100px] shadow-lg fixed bg-[#0073ce] z-[100]'>
             <div className='flex justify-between items-center py-[16px] px-[40px]'>
                 <div className='flex'>
                     <div className="w-[137px] h-[70px] -mt-2 flex items-center justify-center bg-[url('/assets/images/Dots.png')] ">
@@ -189,8 +189,8 @@ const Navbar = () => {
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </div>
                         <div className={`flex px-10 pb-5 md:hidden gap-5 ${showProfile ? 'hidden' : 'block'}`}>
-                            <button className='flex px-4 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>abunə ol</button>
-                            <button className='flex px-4 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>giriş et</button>
+                            <Link to="/register" className='flex px-4 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>abunə ol</Link>
+                            <Link to="/login" className='flex px-4 py-2 rounded-[20px] text-[14px] bg-[#13829B] text-white border border-white font-semibold hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>giriş et</Link>
                         </div>
                     </div>
                     <div className='px-5 hidden text-white md:flex items-center gap-2'>
@@ -198,8 +198,8 @@ const Navbar = () => {
                         <FontAwesomeIcon className='text-white' icon={faMagnifyingGlass} />
                     </div>
                     <div className={`hidden md:flex md:pr-5 pl-5 gap-5 ${showProfile ? 'md:hidden' : 'block'}`}>
-                        <button className='flex px-4 py-2 rounded-[20px] text-[14px] text-white border border-white font-semibold  hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>abunə ol</button>
-                        <button className='flex px-4 py-2 rounded-[20px] text-[14px] text-white border border-white font-semibold  hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>giriş et</button>
+                        <Link to="/register" className='flex px-4 py-2 rounded-[20px] text-[14px] text-white border border-white font-semibold  hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>abunə ol</Link>
+                        <Link to="/login" className='flex px-4 py-2 rounded-[20px] text-[14px] text-white border border-white font-semibold  hover:bg-white hover:text-[#333] hover:border-[#333] transition-colors' onClick={toggleProfile}>giriş et</Link>
                     </div>
                     <div className={`flex justify-center items-center px-5 gap-5 ${showProfile ? 'block' : 'hidden'}`}>
                         <FontAwesomeIcon className='text-white text-[25px] cursor-pointer' icon={faBell} />

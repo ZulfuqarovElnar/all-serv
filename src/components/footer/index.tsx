@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0073ce] py-8 px-10 font-[sans-serif]">
+    <footer className="bg-[#0073ce] py-8 px-10 font-[sans-serif] relative z-[90]">
       <div className="md:max-w-[50%] mx-auto text-center">
         <Link to="/" className="inline-block">
           <img src="/assets/images/logo.svg" 
