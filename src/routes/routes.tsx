@@ -12,6 +12,8 @@ import Reserve from '../components/beauty';
 import AboutPage from '../pages/about-us';
 import Contact from '../pages/contact-us';
 import ProfilePage from '../pages/profilePage';
+import Login from '../pages/login';
+import Register from '../pages/register';
 
 const routes: RouteObject[] = [
   {
@@ -71,6 +73,14 @@ const routes: RouteObject[] = [
   {
     path: '/profile',   
     element: <ProfilePage />
+  },
+  {
+    path: '/login',   
+    element: <Login />
+  },
+  {
+    path: '/register',    
+    element: <Register />
   }
 ];
 

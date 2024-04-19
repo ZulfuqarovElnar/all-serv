@@ -11,7 +11,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faHotel} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Otel Rezervi</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Otel Rezervi</h1>
                     </div>
                 </Link>
                 <Link to="/cleaning">
@@ -19,7 +19,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#777EF6] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]"  icon={faBroom} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Təmizlik xidməti</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Təmizlik xidməti</h1>
                     </div>
                 </Link>
                 <Link to="/nanny">
@@ -27,7 +27,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faBabyCarriage} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Dayə xidməti</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Dayə xidməti</h1>
                     </div>
                 </Link>
                 <Link to="/beauty">
@@ -35,7 +35,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faScissors} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Gözəllik Salonu</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Gözəllik Salonu</h1>
                     </div>
                 </Link>
                 <Link to="#">
@@ -43,7 +43,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faScrewdriverWrench} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Təmir xidməti</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Təmir xidməti</h1>
                     </div>
                 </Link>
                 <Link to="/gym">
@@ -51,7 +51,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faDumbbell} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">İdman zalları</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">İdman zalları</h1>
                     </div>
                 </Link>
                 <Link to="#">
@@ -59,7 +59,7 @@ export default function Services() {
                         <div id="myDiv" className="w-[60px] h-[60px] rounded-full bg-[#0073ce] flex justify-center items-center hover:bg-[#fff] shadow-box cursor-pointer transition-all">
                             <FontAwesomeIcon id="mySvg" className="text-[#fff] text-[30px]" icon={faHouseCrack} />
                         </div>
-                        <h1 className="absolute top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Ev təmiri</h1>
+                        <h1 className="absolute top-[63px] md:top-[75px] cursor-default text-lg font-semibold text-[#0073ce] opacity-0 transition-opacity duration-300">Ev təmiri</h1>
                     </div>
                 </Link>
             </div>
