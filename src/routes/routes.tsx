@@ -14,6 +14,7 @@ import Contact from '../pages/contact-us';
 import ProfilePage from '../pages/profilePage';
 import Login from '../pages/login';
 import Register from '../pages/register';
+import Notification from '../components/notification';
 
 const routes: RouteObject[] = [
   {
@@ -81,6 +82,10 @@ const routes: RouteObject[] = [
   {
     path: '/register',    
     element: <Register />
+  },
+  {
+    path: '/notifications',     
+    element: <Notification />
   }
 ];
 

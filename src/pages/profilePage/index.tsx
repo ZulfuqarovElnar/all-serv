@@ -50,14 +50,20 @@ const ProfilePage = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         if (reader.result) {
-          setSelectedImage(reader.result as string);
-          localStorage.setItem('userImage', reader.result as string);
-          dispatch(updateImage(reader.result as string));
+          const imageUrl = reader.result as string;
+          setSelectedImage(imageUrl); 
+          dispatch(updateImage(imageUrl));
+  
+          const navbarImage = document.getElementById('navbarImage');
+          if (navbarImage) {
+            navbarImage.setAttribute('src', reader.result as string);
+          }
         }
       };
       reader.readAsDataURL(file);
     }
   };
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
