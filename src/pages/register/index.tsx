@@ -4,6 +4,13 @@ import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
+interface RegistrationFormValues {
+  name: string;
+  email: string;
+  password: string;
+  acceptTerms: boolean;
+}
+
 export default function Register() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -20,6 +27,13 @@ export default function Register() {
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+  const saveRegistrationData = (values: RegistrationFormValues) => {
+    try {
+        localStorage.setItem('registrationData', JSON.stringify(values));
+    } catch (error) {
+        console.error('Error saving registration data:', error);
+    }
+};
 
   return (
     <div className="font-sans text-[#333] p-6">
@@ -30,18 +44,17 @@ export default function Register() {
             validationSchema={validationSchema}
             onSubmit={(values, actions) => {
               setTimeout(() => {
-                // Simulate API call or validation
                 if (values.name && values.email && values.password && values.acceptTerms) {
                   setSuccessMessage('Registration successful!');
                   setErrorMessage('');
-                  // Redirect after successful registration
-                  navigate('/'); // Redirect to the home page
+                  saveRegistrationData(values); 
+                  navigate('/');
                 } else {
                   setErrorMessage('Please fill in all the required fields correctly.');
                   setSuccessMessage('');
                 }
                 actions.setSubmitting(false);
-              }, 1000);
+              }, 3000);
             }}
           >
             {({ isSubmitting }) => (

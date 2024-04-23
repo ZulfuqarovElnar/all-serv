@@ -16,6 +16,7 @@ const someSlice = createSlice({
     reducers: {
       updateImage(state, action) {
         state.selectedImage = action.payload;
+        localStorage.setItem('userImage', action.payload);
       },
     },
 });
