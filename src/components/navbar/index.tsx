@@ -33,7 +33,6 @@ const Navbar = () => {
     const isDataExists = isLoginDataExists || isRegistrationDataExists;
 
     const toggleProfile = () => {
-        // Check if local data is available
         const loginData = localStorage.getItem('loginData');
         const registrationData = localStorage.getItem('registrationData');
         if (loginData || registrationData) {
@@ -73,7 +72,6 @@ const Navbar = () => {
 
 
     const handleLogout = () => {
-    // Remove data from localStorage
     localStorage.removeItem('loginData');
     localStorage.removeItem('registrationData');
     localStorage.removeItem('userInfo');
@@ -122,7 +120,7 @@ const Navbar = () => {
                                             </NavLink>
                                         </Menu.Item>
                                         <Menu.Item>
-                                            <NavLink to="/gym" onClick={closeMenu}>
+                                            <NavLink to="/gym" onClick={closeMenu} >
                                                 <div className=' rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1'>İdman zallar</div>
                                             </NavLink>
                                         </Menu.Item> 
@@ -138,17 +136,17 @@ const Navbar = () => {
                                                             <Menu.Items>
                                                                 <div className='absolute left-[200px] rounded-[20px] lg:top-[106px] text-center top-[130px] w-[200px] mt-9 bg-[#0073ce] text-white py-[6px] px-2.5 shadow-box'>
                                                                     <Menu.Item >
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleDayeSubMenuClick("/nanny")}>Uşaq baxıcısı</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
                                                                     <Menu.Item>
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleDayeSubMenuClick("/nanny")}>Yaşlı baxıcısı</div>
                                                                         </NavLink>
                                                                         </Menu.Item>
                                                                     <Menu.Item>
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleDayeSubMenuClick("/nanny")}>Ev heyvan baxıcısı</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
@@ -181,17 +179,17 @@ const Navbar = () => {
                                                             <Menu.Items>
                                                                 <div className='absolute left-[200px] rounded-[20px] lg:top-[216px] text-center top-[130px] w-[200px] mt-9 bg-[#0073ce] text-white py-[6px] px-2.5 shadow-box'>
                                                                     <Menu.Item>
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleTemizlikSubMenuClick("#")}>Xalça təmizliyi</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
                                                                     <Menu.Item>
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleTemizlikSubMenuClick("#")}>Əşya təmizliyi</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
                                                                     <Menu.Item> 
-                                                                        <NavLink to="#" onClick={closeMenu}>
+                                                                        <NavLink to="#" onClick={() => {closeMenu(); window.location.reload();}} >
                                                                             <div className='cursor-pointer rounded-[1.25rem] font-semibold hover:bg-white hover:text-[#333] transition-all my-1 p-1' onClick={() => handleTemizlikSubMenuClick("#")}>Xadimə</div>
                                                                         </NavLink>
                                                                     </Menu.Item>
